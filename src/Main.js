@@ -2,8 +2,6 @@ import React, { useEffect,useState ,useRef} from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
-
-
 function Main({ activeNote, onDeleteNote, onUpdateNote,setIsEditing,isEditing, notes}) {
   
   const [title, setTitle] = useState('');
