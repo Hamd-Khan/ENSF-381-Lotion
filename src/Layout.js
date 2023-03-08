@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import uuid from "react-uuid";
 import Sidebar from "./Sidebar";
 import Main from "./Main";
-import {BrowserRouter,Routes,Route, useNavigate, useParams} from 'react-router-dom';
+// import { useNavigate} from 'react-router-dom';
 
 
 
@@ -13,17 +13,17 @@ function Layout() {
  const [activeNote, setActiveNote] = useState(false);
  const [showSidebar, setShowSidebar] = useState(true);
  const [isEditing, setIsEditing] = useState(false);
- const {id} = useParams();
+//  const {id} = useParams();
   
  
  
 
 
  
- const navigate=useNavigate();
+//  const navigate=useNavigate();
 
  const onAddNote = () => {
-    console.log("adding a new note...")
+    
   
    const newNote = {
      id: uuid(),

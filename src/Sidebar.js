@@ -1,5 +1,5 @@
 import {Link} from 'react-router-dom'
-import {BrowserRouter,Routes,Route, useNavigate} from 'react-router-dom';
+
 
 import { useState } from 'react';
 
@@ -32,7 +32,7 @@ function Sidebar({ notes, onAddNote, activeNote, setActiveNote, setIsEditing, is
         {notes.length===0 && <h3 className="No-notes">No Notes Yet</h3>}
         {notes.filter((note) =>
           note.title.toLowerCase().includes(searchTerm.toLowerCase())
-        ).length === 0 && notes.length != 0 && <div id="no-note">No Notes Found</div>}
+        ).length === 0 && notes.length !== 0 && <div id="no-note">No Notes Found</div>}
         {notes
           .filter((note) =>
             note.title.toLowerCase().includes(searchTerm.toLowerCase())
@@ -63,13 +63,8 @@ function Sidebar({ notes, onAddNote, activeNote, setActiveNote, setIsEditing, is
                   })}
                 </small>
                 <p>
-                  {note.body
-                    ? note.body.length < 0
-                      ? '...'
-                      : `${note.body
-                          .substr(0, 45)
-                          .replace(/<\/?[^>]+(>|$)/g, '')}` + '...'
-                    : '...'}
+                {note.body ? (note.body.length < 0 ? '...' : `${note.body.substr(0, 45).replace(/<\/?[^>]+(>|$)/g, '')}...`) : '...'}
+
                 </p>
               </div>
             </Link>

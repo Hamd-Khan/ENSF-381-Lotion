@@ -1,5 +1,4 @@
 import Layout from './Layout'
-import Create from './Create'
 import {BrowserRouter,Routes,Route,Navigate} from 'react-router-dom'
 import NoteDetails from './NoteDetails';
 

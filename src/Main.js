@@ -1,20 +1,14 @@
 import React, { useEffect,useState ,useRef} from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
-import {useNavigate} from 'react-router-dom';
 
 
 
 function Main({ activeNote, onDeleteNote, onUpdateNote,setIsEditing,isEditing, notes}) {
   
   const [title, setTitle] = useState('');
-  const navigate = useNavigate();
   const quillRef = useRef(null);
   const [editorContent, setEditorContent] = useState('');
-
-  
-  
-  
 
 
 useEffect(() => {
@@ -75,13 +69,13 @@ useEffect(() => {
 
 
 
-  const onEdit = (key, value) => {
-    onUpdateNote({
-      ...activeNote,
-      [key]: value,
-      dateCreated: Date.now(),
-    });
-  };
+  // const onEdit = (key, value) => {
+  //   onUpdateNote({
+  //     ...activeNote,
+  //     [key]: value,
+  //     dateCreated: Date.now(),
+  //   });
+  // };
 
   if (!activeNote) {
     return <div className="not-active-note"><small>Select a note, or create a new one.</small></div>;
